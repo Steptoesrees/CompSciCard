@@ -1,7 +1,141 @@
-<html>
-    <body>
-        <p>
-            HI
-        </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>AI chatbot DEMO</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/BGstyles.css">
+    <link rel="stylesheet" href="CSS/buttons.css">
+    <link rel="stylesheet" href="CSS/message.css">
+    <link rel="stylesheet" href="CSS/chatbox.css">
+    <link rel="stylesheet" href="CSS/taskbar.css">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    
+    
+</head>
+
+
+    
+    
+<body class="main">
+    
+    <div class="flex-container" id="mainContainer">
+        <section class="windowouter" id="leftBG">
+            <section class="windowtopbar"><div class="windowtopbartext">Options left</div> 
+                <div class="windowtopbarbuttons">
+                    
+                </div>
+            </section>
+            <section class="windowmaininnards">
+            <div class="flex-container" id="charuser">
+                <section class="sideBySideInput"> 
+                    <label for="charname">character name</label><br/>
+                    <input type="text" id="charname" class="input" placeholder="Enter char's name..."></input>
+                </section>
+
+                <section class="sideBySideInput">
+                    <label for="username" >user name</label><br/>
+                    <input type="text" id="username" class="input" placeholder="Enter user's name..."></input>
+                </section>
+            </div>
+            <br>
+            <label for="Chatbot_personality" class="inplabel"> Chatbot info</label><br/>
+            <textarea type="text" id="Chatbot_personality" placeholder="set the chatbot info here..." wrap="soft"></textarea>
+            <br><br>
+            <label for="user_personality" class="inplabel"> User info</label><br/>
+            <textarea type="text" id="user_personality" placeholder="set the user info here..." wrap="soft"></textarea>
+            
+            <br><br>
+            <label for="Chatbot_temperature"class="inplabel">temperature: <span id="temperature"></span></label><br/>
+            <input type="range" id="Chatbot_temperature" class="slider" min="0" max="1" step="0.01" value="0.5" placeholder="temperature">
+            <br><br>
+            <label for="Chatbot_top_p"class="inplabel">top_p: <span id="top_p"></span></label><br/>
+            <input type="range" id="Chatbot_top_p" class="slider" min="0" max="1" step="0.01" value="0.5" placeholder="temperature">
+            <br><br>
+            <label for="Chatbot_frequency_penalty"class="inplabel">frequency_penalty: <span id="frequency_penalty"></span></label><br/>
+            <input type="range" id="Chatbot_frequency_penalty" class="slider" min="0" max="1" step="0.01" value="0.5" placeholder="temperature">
+            <br><br>
+            <label for="Chatbot_presence_penalty" class="inplabel">presence_penalty: <span id="presence_penalty"></span></label><br/>
+            <input type="range" id="Chatbot_presence_penalty" class="slider" min="0" max="1" step="0.01" value="0.5" placeholder="temperature">
+            <br><br>
+            <label for="Chatbot_model">choose model:</label><br/>
+            <select id="Chatbot_model" class="input" placeholder="choose chatbot model">
+                <option value="openai/gpt-4.1-mini">GPT-4.1 Mini</option>
+                <option value="deepseek/deepseek-r1-0528">DeepSeek: R1 0528</option>
+                <option value="deepseek/deepseek-chat-v3-0324">DeepSeek V3 0324</option>
+                <option value="deepseek/deepseek-r1-0528-qwen3-8b">DeepSeek R1 Qwen3 8B</option>
+                <option value="google/gemini-2.0-flash-001">Gemini 2.0 Flash</option>
+                <option value="GLM"> GLM4.5 </option>
+                <option value="openrouter/auto"> autorouter </option>
+                <option value="null"> null </option>
+            </select>
+            <br><br>
+            <label for="pre_history_prompt" class="inplabel">pre history prompt</label><br/>
+            <textarea type="text" id="pre_history_prompt" placeholder="set the pre_history_prompt here..."       wrap="soft"></textarea>
+            <br>
+            <label for="post_history_prompt" class="inplabel">post history prompt</label><br/>
+            <textarea type="text" id="post_history_prompt" placeholder="set the post_history_prompt here..."       wrap="soft"></textarea>
+            <br>
+            <label for="scenario" class="inplabel">Scenario</label> <br/>
+            <textarea type="text" id="scenario" placeholder="set the scenario here..."       wrap="soft"></textarea>
+            </section>
+
+
+        </section>
+        
+
+            <section id="chatbot" class="windowouter">
+                <section class="windowtopbar"><div class="windowtopbartext">AI Chatbot</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="resetChat()"> <img class="resetimage" src="imgs/restart.png"> </button></div></section>
+                <div class="windowmaininnards">
+                    <div class="chat-window">
+                        <div id="chatHistory" class="chat-history"></div>
+                        <div class="chat-input">
+                            <input type="text" id="chatInput" class ="input" placeholder="Ask me anything...">
+                            <button id="chatButton" onclick="sendChatMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        
+        <div class="windowouter" id="rightBG">
+          <section class="windowtopbar"><div class="windowtopbartext">Options right</div> 
+                <div class="windowtopbarbuttons">
+                    
+                </div>
+            </section>
+                <section class="windowmaininnards" id="rightWin">
+            <div id="icons">
+                <label for="CiconInput" class="inplabel">Chatbot icon</label> <br/>
+                <input type="file" id="CiconInput" class="icon_Input" placeholder="Enter icon URL...">
+                <p></p> 
+                <label for="UiconInput" class="inplabel">User icon</label> <br/>
+                <input type="file" id="UiconInput" class="icon_Input" placeholder="Enter icon URL...">
+            </div>
+            <br>
+            
+                
+            </section>
+        </div>
+    
+    </div>
+
+    <section class="taskbar">
+        <img class="windowsIcon" id="windowsOrb" src="imgs/windows_7_start_menu_orb.png" onclick=""></img> 
+        <div class="TBitem">  <img class="TBitem" src="imgs/windows_7_start_menu_orb.png" onclick=""></img>  </div> 
+        <div class="TBitem"> <img class="TBitem" src="imgs/windows_7_start_menu_orb.png" onclick=""></img> </div> 
+        <div class="TBitem"> <img class="TBitem" src="imgs/windows_7_start_menu_orb.png" onclick=""></img> </div>
+    </section>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="Javascript/app.js"></script>
+    <script src="Javascript/call.js"></script>
+    <script src="Javascript/enter.js"></script>
+    <script src="Javascript/chatbotsettings.js"></script>
+    <script src="Javascript/reset.js"></script>
+    <script src="Javascript/menuOrbHover.js"></script>
+    <script src="taskbar"></script>
+
 </html>
