@@ -63,7 +63,7 @@ html, body{
 
 #Rohan.windowouter {
     top: 69%;
-    left: 12%;
+    left: 2%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -71,7 +71,7 @@ html, body{
 
 #Laura.windowouter {
     top: 69%;
-    left:42%;
+    left:24%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -79,7 +79,15 @@ html, body{
 
 #Rebbeca.windowouter {
     top: 69%;
-    left: 72%;
+    left: 46%;
+    width: 20%;
+    height: 31%;
+    resize: none;
+}
+
+#Abdullah.windowouter {
+    top: 69%;
+    left: 68%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -92,6 +100,7 @@ html, body{
     height: 31%;
     resize: none;
 }
+
 
 #Tomi .windowmaininnards{
     background-image: url('rickroll.gif');
