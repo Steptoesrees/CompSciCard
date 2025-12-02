@@ -4,7 +4,7 @@ function quitPage(id) {
   }
 
 (function () {
-  const names = ["Main", "Tomi", "Jack", "Laura", "Rohan", "Rebbeca", "Abdullah"];
+  const names = ["Main", "UserA", "UserB", "UserC", "UserD", "UserE", "UserF"];
   names.forEach((name) => {
     const win = document.getElementById(name);
     if (!win) return;
