@@ -3,13 +3,30 @@ function quitPage(id) {
     win.remove();
   }
 
+
+async function getLight(){
+  const date = new Date();
+  const hour = date.getHours();
+  const nightImage = "CSS/FrutigerNBG.webp";
+  const dayImage = "CSS/frutigerBG.jpg";
+  if (hour <= 7 || hour >= 17) {
+    document.body.style.backgroundImage = `url('${nightImage}')`;
+  } else {
+    document.body.style.backgroundImage = `url('${dayImage}')`;
+  }
+}
+
+
 (function () {
-  const names = ["Main", "Tomi", "Jack", "Laura", "Rohan", "Rebbeca", "Abdullah"];
+  const names = ["Main", "UserA", "UserB", "UserC", "UserD", "UserE", "UserF"];
   names.forEach((name) => {
     const win = document.getElementById(name);
+    
     if (!win) return;
     const handle = win.querySelector('.windowtopbar');
-    if (!handle) return;
+    if (!handle) {
+      return;
+    }
     let offsetX = 0, offsetY = 0, dragging = false;
 
     const onMove = (e) => {
@@ -23,6 +40,7 @@ function quitPage(id) {
       handle.style.cursor = 'grab';
       document.removeEventListener('mousemove', onMove);
       document.removeEventListener('mouseup', onUp);
+      
     };
 
     handle.addEventListener('mousedown', (e) => {
@@ -36,3 +54,7 @@ function quitPage(id) {
     });
   });
 })();
+
+
+
+

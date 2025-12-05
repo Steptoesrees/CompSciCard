@@ -47,6 +47,7 @@ html, body{
 }
 
 #Main.windowouter {
+    z-index: 1;
     top: 3%;
     left: 2%;
     width: 72%;
@@ -54,6 +55,7 @@ html, body{
 }
 
 #UserA.windowouter {
+    z-index: 0;
     top: 37%;
     left: 77%;
     width: 20%;
@@ -62,6 +64,7 @@ html, body{
 }
 
 #UserB.windowouter {
+    z-index: 0;
     top: 69%;
     left: 2%;
     width: 20%;
@@ -70,6 +73,7 @@ html, body{
 }
 
 #UserC.windowouter {
+    z-index: 0;
     top: 69%;
     left:24%;
     width: 20%;
@@ -78,6 +82,7 @@ html, body{
 }
 
 #UserD.windowouter {
+    z-index: 0;
     top: 69%;
     left: 46%;
     width: 20%;
@@ -86,6 +91,7 @@ html, body{
 }
 
 #UserE.windowouter {
+    z-index: 0;
     top: 69%;
     left: 68%;
     width: 20%;
@@ -94,6 +100,7 @@ html, body{
 }
 
 #UserF.windowouter {
+    z-index: 0;
     top: 3%;
     left: 77%;
     width: 20%;
@@ -103,6 +110,8 @@ html, body{
 
 
 #UserF .windowmaininnards{
+    background-size: cover ;
+    background-repeat: no-repeat;
     background-image: url('rickroll.gif');
 }
 
