@@ -1,69 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="UTF-8">
+    <link rel="icon" href="ENAfavicon.webp">
     <title>Comp Sci Card</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/BGstyles.css">
     <link rel="stylesheet" href="CSS/buttons.css">
-    
-    
-    
+
+
+
 </head>
 
 
-    
-    
-<body class="main" onload="getLight()">
-    
-    <div class="flex-container" id="mainContainer">
+
+
+<body class="main">
+
+    <div class=" flex-container" id="mainContainer">
 
         <section id="Main" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> Main Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('Main')"> </button></div></section>
+            <section class="windowtopbar">
+                <div class="windowtopbartext"> Main Window</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="quitPage('Main')"> </button>
+                </div>
+            </section>
             <div class="windowmaininnards">
-        
+                <p>
+                    yea uh, some text text ig, cause i cant
+                    be bothered to copy lorem ipsum
+                </p>
             </div>
-        </section>    
+        </section>
 
         <section id="UserF" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> Tomi Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('UserF')"> </button></div></section>
+            <section class="windowtopbar">
+                <div class="windowtopbartext"> Tomi's Idea</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="quitPage('UserF')"> </button>
+                </div>
+            </section>
             <div class="windowmaininnards">
-        
+
             </div>
         </section>
 
         <section id="UserA" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> UserA Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('UserA')"> </button></div></section>
+            <section class="windowtopbar">
+                <div class="windowtopbartext"> Craig Window</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="quitPage('UserA')"> </button>
+                </div>
+            </section>
             <div class="windowmaininnards">
-        
             </div>
         </section>
 
         <section id="UserB" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> UserB Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('UserB')"> </button></div></section>
+            <section class="windowtopbar">
+                <div class="windowtopbartext"> Dave Window</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="quitPage('UserB')"> </button>
+                </div>
+            </section>
             <div class="windowmaininnards">
-        
             </div>
         </section>
 
         <section id="UserC" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> UserC Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('UserC')"> </button></div></section>
+            <section class="windowtopbar">
+                <div class="windowtopbartext"> UserC Window</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="quitPage('UserC')"> </button>
+                </div>
+            </section>
             <div class="windowmaininnards">
-        
+                <div id="weather-widget">
+                    <p>Loading...</p>
+                </div>
             </div>
         </section>
 
-        <section id="UserD" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> UserD Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('UserD')"> </button></div></section>
-            <div class="windowmaininnards">      
+        <section id="chatbot" class="windowouter">
+            <section class="windowtopbar">
+                <div class="windowtopbartext">Haiku Generator</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="resetChat()"></button></div>
+            </section>
+            <div class="windowmaininnards">
+                <div class="chat-window">
+                    <div id="chatHistory" class="chat-history"></div>
+                    <div class="chat-input">
+                        <input type="text" id="chatInput" class="input" placeholder="What should the haiku be about...">
+                        <button id="chatButton" onclick="generateHaiku()">Send</button>
+                    </div>
+                    <div id="chatOutput">
+
+                    </div>
+                </div>
             </div>
         </section>
+
         <section id="UserE" class="windowouter">
-            <section class="windowtopbar"><div class="windowtopbartext"> UserE Window</div> <div class="windowtopbarbuttons"><button class="crossTopButton"  onclick="quitPage('UserE')"> </button></div></section>
+            <section class="windowtopbar">
+                <div class="windowtopbartext"> UserE Window</div>
+                <div class="windowtopbarbuttons"><button class="crossTopButton" onclick="quitPage('UserE')"> </button>
+                </div>
+            </section>
             <div class="windowmaininnards">
-                
+
             </div>
-        </section> 
+        </section>
 
 
 </body>

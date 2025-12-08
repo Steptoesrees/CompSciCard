@@ -1,5 +1,5 @@
-
-html, body{
+html,
+body {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -17,8 +17,8 @@ html, body{
     flex-basis: 0;
     align-self: flex-start;
     justify-self: flex-start;
-    box-shadow: 0 -2px 20px rgba(0,0,0,0.5);
-    
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 
@@ -27,23 +27,23 @@ html, body{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-	position: absolute; 
-    top: 5%; 
-    left: 10%; 
-    width: 80%; 
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
     height: 85%;
-	padding: 0px 10px 10px 10px;
-	backdrop-filter: blur(5px);
+    padding: 0px 10px 10px 10px;
+    backdrop-filter: blur(2px);
     resize: both;
     overflow: hidden;
-	border-radius: 5px;
-	background-color: rgba(130, 200, 220, 0.3);
-	border: 1px solid rgba(0, 0, 0, 1);
-	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5),
-    inset 0 0 10px rgba(255, 255, 255, 0.6),
-    inset 0 0 30px rgba(255, 255, 255, 0.3),
-    inset 0 0 60px rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background-color: rgba(130, 200, 220, 0.3);
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.6),
+        inset 0 0 30px rgba(255, 255, 255, 0.3),
+        inset 0 0 60px rgba(255, 255, 255, 0.1);
 }
 
 #Main.windowouter {
@@ -56,8 +56,8 @@ html, body{
 
 #UserA.windowouter {
     z-index: 0;
-    top: 37%;
-    left: 77%;
+    top: 69%;
+    left: 24%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -74,14 +74,14 @@ html, body{
 
 #UserC.windowouter {
     z-index: 0;
-    top: 69%;
-    left:24%;
+    top: 37%;
+    left: 77%;
     width: 20%;
     height: 31%;
     resize: none;
 }
 
-#UserD.windowouter {
+#chatbot.windowouter {
     z-index: 0;
     top: 69%;
     left: 46%;
@@ -108,47 +108,93 @@ html, body{
     resize: none;
 }
 
+#chatbot .windowmaininnards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-#UserF .windowmaininnards{
-    background-size: cover ;
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+
+#chatInput {
+    flex: 1;
+    width: 93%;
+    border-radius: 0px;
+}
+
+#chatButton {
+    flex: 1;
+    border-radius: 0px;
+}
+
+#chatOutput {
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    color: black;
+}
+
+
+#UserF .windowmaininnards {
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url('rickroll.gif');
 }
 
+#UserA .windowmaininnards {
+    background-size: cover;
+    background-position: -10px;
+    background-repeat: no-repeat;
+    background-image: url('Craig.png');
+    background-blend-mode: multiply;
+}
+
+#UserB .windowmaininnards {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('Dave.jpg');
+    background-blend-mode: multiply;
+}
+
+#chatbot .windowtopbar {
+    backdrop-filter: blur(0px);
+}
+
 .windowmaininnards {
     isolation: isolate;
-    text-align:center;
-    
-    overflow: scroll;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: 0;
-	flex: 1 1 auto;
+    flex: 1 1 auto;
     min-height: 0;
-    width:100%;
-	backdrop-filter: blur(5px);
-	align-self: flex-start;
-	justify-self: flex-end;
-	background-color: #ffffb9;
-	border: 1px solid rgba(0, 0, 0, 1);
-	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7),
-     0 0 10px rgba(255, 255, 255, 0.6),
-     0 0 30px rgba(255, 255, 255, 0.5),
-     0 0 60px rgba(255, 255, 255, 0.2);
-	;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    align-self: flex-start;
+    justify-self: flex-end;
+    background-color: #ffffdb;
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7),
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.5),
+        0 0 60px rgba(255, 255, 255, 0.2);
+    ;
 }
 
-.windowmaininnards::-webkit-scrollbar{
+.windowmaininnards::-webkit-scrollbar {
     display: none;
 }
 
-.windowtopbar{
+.windowtopbar {
     cursor: grab;
-    user-select:none;
-    width:100%;
+    user-select: none;
+    width: 100%;
     flex: 0 0 30px;
-    min-height:30px;
-    height:30px;
+    min-height: 30px;
+    height: 30px;
     align-self: flex-start;
     justify-self: flex-start;
     display: flex;
@@ -157,17 +203,37 @@ html, body{
 
 }
 
-.windowtopbartext{
+.windowtopbartext {
     font-family: Arial, Helvetica, sans-serif;
-    flex:1;
+    flex: 1;
     align-self: center;
     text-align: left;
 }
 
-.windowtopbarbuttons{
+.windowtopbarbuttons {
     height: 60%;
-    flex:1;
+    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+#weather-widget {
+    text-align: center;
+    color: black;
+}
+
+#weather-widget h3 {
+    font-size: 30px;
+}
+
+#weather-widget div {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+p {
+    color: black;
+    font-size: 20px;
+    padding-left: 10px;
 }

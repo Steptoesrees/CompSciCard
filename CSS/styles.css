@@ -1,10 +1,8 @@
-
-
-.icon_Input{
+.icon_Input {
     background: #FFFFFF;
     width: 60%;
     overflow: hidden;
-    padding:2px;
+    padding: 2px;
     text-align: left;
 }
 
@@ -19,23 +17,23 @@
     border-radius: 5px;
     color: #000000;
     box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 1),
-    inset 0 0 10px rgba(255, 255, 255, 0.8),
-    inset 0 0 30px rgba(255, 255, 255, 0.5),
-    inset 0 0 60px rgba(255, 255, 255, 0.2);
+        inset 0 0 0 1px rgba(255, 255, 255, 1),
+        inset 0 0 10px rgba(255, 255, 255, 0.8),
+        inset 0 0 30px rgba(255, 255, 255, 0.5),
+        inset 0 0 60px rgba(255, 255, 255, 0.2);
 }
 
 
 .flex-container {
     display: flex;
-    flex-direction: row; 
-    justify-content: center; 
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
 }
 
 body {
-    
+
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -43,6 +41,5 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: #e0e0e0;
-    
-}
 
+}
