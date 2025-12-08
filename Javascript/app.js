@@ -11,7 +11,7 @@ async function getLight() {
   const hour = date.getHours();
   const nightImage = "CSS/FrutigerNBG.webp";
   const dayImage = "CSS/frutigerBG.jpg";
-  if (hour <= 7 || hour >= 17) {
+  if (hour <= 7 || hour >= 16) {
     document.body.style.backgroundImage = `url('${nightImage}')`;
   } else {
     document.body.style.backgroundImage = `url('${dayImage}')`;
