@@ -258,3 +258,23 @@ p {
     font-size: 20px;
     padding-left: 10px;
 }
+
+.main-text-content {
+    margin-bottom: 15px;
+}
+
+.main-gif-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.main-gif-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
