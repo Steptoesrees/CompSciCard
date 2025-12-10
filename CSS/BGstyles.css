@@ -55,9 +55,10 @@ body {
 }
 
 #UserA.windowouter {
+
     z-index: 0;
     top: 69%;
-    left: 2%;
+    left: 46%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -65,9 +66,10 @@ body {
 
 #UserB.windowouter {
 
+
     z-index: 0;
     top: 69%;
-    left: 24%;
+    left: 68%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -85,7 +87,7 @@ body {
 #chatbot.windowouter {
     z-index: 0;
     top: 69%;
-    left: 46%;
+    left: 24%;
     width: 20%;
     height: 31%;
     resize: none;
@@ -94,10 +96,12 @@ body {
 #UserE.windowouter {
     z-index: 0;
     top: 69%;
-    left: 68%;
+    left: 2%;
     width: 20%;
     height: 31%;
     resize: none;
+
+
 }
 
 #UserF.windowouter {
@@ -113,6 +117,14 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+#UserE img {
+    position: relative;
+    scale: 140%;
+    top: inherit;
+
+    left: 15%;
 }
 
 .chat-window {
@@ -160,6 +172,14 @@ body {
     background-image: url('Dave.jpg');
     background-blend-mode: multiply;
 }
+
+#UserE .windowmaininnards {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('ena spin.webp');
+    background-blend-mode: multiply;
+}
+
 
 #chatbot .windowtopbar {
     backdrop-filter: blur(0px);
@@ -224,11 +244,11 @@ body {
     color: black;
 }
 
-#weather-widget h3 {
+h3 #weather-widget {
     font-size: 30px;
 }
 
-#weather-widget div {
+div #weather-widget {
     padding-top: 10px;
     font-size: 20px;
 }

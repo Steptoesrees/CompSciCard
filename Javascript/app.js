@@ -11,7 +11,7 @@ async function getLight() {
   const hour = date.getHours();
   const nightImage = "CSS/FrutigerNBG.webp";
   const dayImage = "CSS/frutigerBG.jpg";
-  if (hour <= 7 || hour >= 16) {
+  if (hour < 8 || hour >= 17) {
     document.body.style.backgroundImage = `url('${nightImage}')`;
   } else {
     document.body.style.backgroundImage = `url('${dayImage}')`;
@@ -83,7 +83,8 @@ async function getWeather() {
             <br>
             <div>Temp: ${temp}°C</div>
             <div>Wind: ${wind} km/h</div>
-            <div>Condition: ${condition}</div>
+            <br>
+            <div>${condition}</div>
             
         `;
   } catch (error) {
@@ -154,9 +155,10 @@ async function generateResponse(prompt) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: "openai-fast",
+        model: "openai",
         messages: prompt,
         max_tokens: 100,
+        seed: Math.round(Math.random() * 1000000),
         reasoning: {
           exclude: true
         }
@@ -179,12 +181,11 @@ async function generateResponse(prompt) {
 
     console.log('Full API response:', data);
 
-    // Handle OpenAI-like structure
     if (data.choices && data.choices[0] && data.choices[0].message) {
       console.log(data.choices[0].message.content);
       return data.choices[0].message.content;
     }
-    // Handle direct text in JSON if any (fallback)
+
     else {
       console.log("Unexpected JSON structure:", data);
       return JSON.stringify(data);
